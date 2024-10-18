@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-6">
+
+  <div class="container mx-auto p-8 max-w-lg bg-white rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-center mb-6 text-blue-600">Welcome to the Quiz App</h1>
+
+    <form id="difficultyForm" class="mb-8">
+      <label for="category" class="block mb-2 text-lg font-semibold text-gray-700">Select Category:</label>
+      <select id="category" name="category" required class="block w-full p-2 border border-gray-300 rounded mb-4 focus:ring-2 focus:ring-blue-500">
+        <option value="" disabled selected>--Select Category--</option>
+      </select>
+
+      <label for="difficulty" class="block mb-2 text-lg font-semibold text-gray-700">Select Difficulty Level:</label>
+      <select id="difficulty" name="difficulty" required class="block w-full p-2 border border-gray-300 rounded mb-4 focus:ring-2 focus:ring-blue-500">
+        <option value="" disabled selected>--Select Difficulty--</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Get Question</button>
+    </form>
+
+    <div id="quizSection" style="display: none;" class="mb-6">
+      <h2 id="question" class="text-xl font-semibold text-gray-800 mb-4"></h2>
+      <form id="quizForm" class="flex flex-col space-y-4">
+        <div id="answers" class="flex flex-col space-y-2"></div>
+
+        <button id="submitAnswer" class="w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition duration-300">Submit Answer</button>
+      </form>
+
+      <p id="resultMessage" class="text-center text-lg font-semibold mt-4"></p>
+
+      <button id="nextQuestion" class="w-full bg-blue-600 text-white font-bold py-3 px-4 mt-4 rounded-lg hover:bg-blue-700 transition duration-300" style="display: none;">Next Question</button>
+    </div>
+
+    <div id="scoreSection" class="text-center mt-6">
+      <p class="text-lg font-semibold text-gray-800">Correct: <span id="correctCount" class="font-bold">0</span></p>
+      <p class="text-lg font-semibold text-gray-800">Incorrect: <span id="incorrectCount" class="font-bold">0</span></p>
+      
+      <button id="resetScore" class="w-full bg-red-500 text-white font-bold py-3 px-4 mt-4 rounded-lg hover:bg-red-600 transition duration-300">Reset Score</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
